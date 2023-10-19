@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.section{
+    margin: 0;
+    display: grid;
+    height: 100%;
+    place-items: center;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="submit"],
+button {
+    display: block;
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin: 10px auto;
+    cursor: pointer;
+}
+
+button#generate {
+    background-color: #28A745;
+}
+
+#mensajeResultado {
+    margin: 10px auto;
+    color: #333;
+}
+
+footer {
+    padding: 9px;
+    float: right;
+    margin-top: 20px;
+    color: #f2f2f2;
+    background: #02335e00;
+    position: relative;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+  }
+.container{
+    top:0;
+    position: fixed;
+    
+}  

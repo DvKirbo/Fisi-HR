@@ -1,0 +1,177 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: "Oswald", sans-serif;
+    font-size: 16px;
+    height: 100%;
+    background-color: #000000;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='Artboard-5' fill='%23471f88' fill-opacity='0.4' fill-rule='nonzero'%3E%3Cpath d='M6 18h12V6H6v12zM4 4h16v16H4V4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  .container {
+    width: 90%;
+    margin: auto;
+  }
+
+#mapa {
+    background-color: rgba(105, 107, 107, 0);
+    height: 800px;
+    width: 800px;
+    margin: auto;
+
+}
+
+.main-header {
+  background: linear-gradient(
+        to left,#02335e 0,#1e5d88 25%,#393358 50%,#424346 75%,#191b1d 100%);
+}
+
+.time-control {
+    left: 20px;
+    bottom: 20px;
+    z-index: 1000;
+    background: rgba(104, 100, 100, 0.8);
+    border: 1px solid #615c5c;
+    border-radius: 3px;
+    box-shadow: 1px 1px 2px #000000;
+    vertical-align: middle;
+    font-family: sans-serif;
+    font-size: 14px;
+    padding: 8px 12px;
+}
+
+.mapa-content {
+    justify-content: center;
+    align-items: center; 
+
+    perspective: 800px; 
+    left: 100%;
+    top: 110%;
+
+    display: inline;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+}
+
+
+#dimension-section{
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+#button_3d, #button_2d{
+    margin: 5px;
+    height: 50px;
+    width: 70px;
+}
+
+.btn {
+    cursor: pointer;
+    display: inline-block;
+    border: 0;
+    font-weight: bold;
+    padding: 10px 20px;
+    background: #262626;
+    color: #fff;
+    font-size: 15px;
+    border: 1px solid #fff;
+  }
+  
+  .btn:hover {
+    opacity: 0.9;
+  }
+  
+  .showcase {
+    width: 100%;
+    height: 550px;
+    background: url("../img/fisiperdido.jpg") no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: flex-end;
+    padding-top: 400px;
+    padding-bottom: 50px;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+  
+  .showcase h2,
+  .showcase p {
+    margin-bottom: 10px;
+  }
+  
+  .showcase .btn {
+    margin-top: 20px;
+  }
+
+/* News Cards */
+.section1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: flex-end;
+    padding-top: 20px;
+    margin-bottom: 0px;
+    color: #fff;
+}
+
+.news-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin: 70px 0;
+  }
+  
+  .news-cards img {
+    width: 100%;
+    height: 180px;
+  }
+  
+  .news-cards h3 {
+    font-size: 20px;
+    margin: 10px 0;
+  }
+  
+  .news-cards a {
+    padding-bottom: 10px;
+    padding-top: 0px;
+    color: #f2f2f2;
+    text-transform: uppercase;
+    display: inline-block;
+    font-weight: bold;
+  }
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+footer {
+  padding: 9px;
+  float: right;
+  margin-top: 20px;
+  color: #f2f2f2;
+  background: #02335e00;
+  position: relative;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Fontawesome -->
+  <link
+    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
+  <!-- Bootswatch Darkly Theme -->
+  <link
+    href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/darkly/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <title>WebMap</title>
+
+  <!-- Agregando libreria-->
+  <link rel="stylesheet" href="../styles/style.css">
+  <link rel="stylesheet" href="../styles/preload.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="https://cdn.osmbuildings.org/classic/0.2.2b/OSMBuildings-Leaflet.js"></script>
+
+</head>
+<body class="hidden">
+  <!-- PreLoader -->
+  <div class="centered" id="onload">
+    <div class="lds-ellipsis">
+      <div>
+
+      </div>
+      <div>
+
+      </div>
+      <div>
+
+      </div>
+      <div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+      <!-- Navbar -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark main-header">
+      <a class="navbar-brand" href="layout.html">WebMap - FISI</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="1erpiso.html">
+              Primer piso <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="2dopiso.html">
+              Segundo piso <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="3erpiso.html">
+              Tercer piso <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li>
+            <img src="../img/FISI_logo.png" style="float: right ; margin-left: 325px; height: 40px;">
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- SHOWCASE -->
+    <header class="showcase">
+      <h2>¿ESTÁS PERDIDO?</h2>
+      <p>No te preocupes, nuestro equipo, Wetkats, te ayudará a ubicarte dentro de nuestra facultad en cuestión de segundos.</p> 
+      <p>Sigue bajando para encontrar más información sobre la infraestructura de nuestra facultad.</p>
+    </header>
+
+    <div class="section1">
+      <h3>Parece un poco obvio pero, ¡ubica en que piso te encuentras!</h3>
+      <h5>Más información de cada piso aquí abajo.</h5>
+
+      
+    </div>
+
+    <!-- NEWS CARDS -->
+    <div class="news-cards">
+      <div>
+        <img src="../img/primerpiso.jpg" alt="" />
+        <h3>Primer piso.</h3>
+        <p>En el primer piso podrás encontrar, la oficina del CERSEU, la oficina de USGOM, la losa deportiva, el módulo de atención al docente, entre más.
+          Explora el primer piso de nuestra facultad, dando click aquí abajo.
+        </p>
+        <a href="1erpiso.html">Visitar el primer piso <i class="fas fa-angle-double-right"></i></a>
+      </div>
+      <div>
+        <img src="../img/fisiperdido.jpg" alt="" />
+        <h3>Segundo piso.</h3>
+        <p>En el segundo piso, encontrarás lugares como, el micro data center, la sala de catedráticos, labortatorios, el Decanato, el comedor, etc. Averigua más
+          sobre el segundo piso de la FISI, dando click aquí abajo.
+        </p>
+        <a href="2dopiso.html">Visitar el segundo piso <i class="fas fa-angle-double-right"></i></a>
+      </div>
+      <div>
+        <img src="../img/FISI.jpg" alt="" />
+        <h3>Tercer piso.</h3>
+        <p>En el tercer piso de la FISI, podrás encontrar, la unidad de mátricula, las direcciones tanto de la escuela de software como de sistemas, la oficina de la UNAYOE y Bienestar,
+          etc. Descubre más sobre este piso dando click aquí abajo.
+        </p>
+        <a href="3erpiso.html">Visitar el tercer piso <i class="fas fa-angle-double-right"></i></a>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="../scripts/jquery.js"></script>
+
+  </div>  
+</body>
+</html>

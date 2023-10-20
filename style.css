@@ -1,0 +1,228 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+header {
+    background: black
+}
+.logo{
+    font-size: 30px;
+    font-weight: 700;
+    color: white;
+}
+
+.wasa{
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    background: black;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2. 1fr);
+    grid-template-areas: "wasa-img wasa-text";
+    align-items: center;
+    gap: 2rem;
+}
+.wasa-img img{
+    width: 400px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: wasa-img;
+}
+.wasa-text{
+    padding: 0 19%;
+    grid-area: wasa-text;
+}
+.wasa-text h5{
+    font-size: 14px;
+    font-weight: 400;
+    color: white;
+    margin-bottom: 40px;
+}
+.wasa-text h1{
+    font-family: 'Permanent Marker', cursive;
+    font-size: 90px;
+    line-height: 1;
+    color: white;
+    margin: 0 0 45px;
+}
+.wasa-text h4{
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 10px;
+
+}
+.wasa-text p{
+    color:white;
+    font-size: 1.9;
+    margin-bottom: 20px;
+}
+section{
+    padding: 0 19%;
+}
+.wasa-text ul{
+    color: white;
+    font-size: 1.9;
+    margin-bottom: 30;
+}
+
+/* etesech */
+.etesech {
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    background: black;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "etesech-text etesech-img";
+    align-items: center;
+    gap: 2rem;
+}
+
+.etesech-text {
+    padding: 0 19%;
+    grid-area: etesech-text; 
+}
+
+.etesech-text ul {
+    color: white;
+    font-size: 1.0rem; 
+    margin-bottom: 15px; 
+}
+
+.etesech p {
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.etesech-img img {
+    width: 450px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: etesech-img;
+}
+
+/*CONTENIDO*/
+.contenido {
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    background: black;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "contenido-text contenido-img ";
+    align-items: center;
+    gap: 2rem;
+}
+.contenido-text {
+    padding: 0 19%;
+    grid-area: contenido-text;
+}
+.contenido-text h1{
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 10px;
+
+}
+.contenido-text h2{
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 10px;
+
+}
+.contenido-text h3{
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 10px;
+
+}
+.contenido-text p{
+    color:white;
+    font-size: 1.9;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+.contenido-img img {
+    width: 450px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: contenido-img;
+}
+/*presentacion*/
+
+.presentacion {
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    background: black;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "presentacion-img presentacion-text  ";
+    align-items: center;
+    gap: 2rem;
+}
+.presentacion-text {
+    padding: 0 19%;
+    grid-area: presentacion-text;
+}
+.presentacion-text h1{
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 10px;
+
+}
+.presentacion-text h2{
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 10px;
+
+}
+.presentacion-text h3{
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 10px;
+
+}
+.presentacion-text p{
+    color:white;
+    font-size: 1.9;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+.presentacion-img img {
+    width: 450px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: presentacion-img;
+}
+.presentacion-text h4{
+    font-family: 'Permanent Marker', cursive;
+    font-size: 90px;
+    line-height: 1;
+    color: white;
+    margin: 0 0 45px;
+}

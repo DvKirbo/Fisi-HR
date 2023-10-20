@@ -30,7 +30,7 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script src="https://cdn.osmbuildings.org/classic/0.2.2b/OSMBuildings-Leaflet.js"></script>
 
-    <title>Fisi Hr</title>
+    <title>FISI HR</title>
 </head>
 <body >
 
@@ -38,7 +38,7 @@
       <!-- Navbar -->
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark main-header">
-      <a class="navbar-brand" href="layout.html">Horarios y reserva - FISI</a>
+      <a class="navbar-brand" href="/index.html">FISI HR</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -54,18 +54,18 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="1erpiso.html" div="first_floor">
+            <a class="nav-link" href="./Horario.html" div="first_floor">
               Horario <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="2dopiso.html" div="second_floor">
-              Segundo piso <span class="sr-only">(current)</span>
+            <a class="nav-link" href="./ambiente.html" div="second_floor">
+              R. Ambiente <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="3erpiso.html" div="third_floor">
-              Tercer piso <span class="sr-only">(current)</span>
+            <a class="nav-link" href="./labo.html" div="third_floor">
+              R. Laboratorio <span class="sr-only">(current)</span>
             </a>
           </li>
           <li>
@@ -84,7 +84,7 @@
     
       <div class="container" id="Horario" >
         <div class="row">
-          <h1 style="font-weight: bold">FISI - Generador de horarios</h1>
+          <h1 style="font-weight: bold">Organiza tu horario - FISI</h1>
         </div>
         <form>
           <div class="row mb-3">
@@ -104,11 +104,13 @@
                 class="form-select"
                 autocomplete="off"
               >
-                <option selected>Selecciona un ciclo</option>
-                {% for ciclo in ciclos%}
-                <option value="{{ciclo}}">{{ciclo}}</option>
-                {% endfor %}
+                
+              
+              <option selected>Selecciona un ciclo</option>
+<!--                 {% for ciclo in ciclos%}
+                <option value="{{ciclo}}">{{ciclo}}</option> -->
               </select>
+
             </div>
             <div class="col-12 col-md-3">
               <label for="curso" class="form-label">Curso</label>
@@ -141,18 +143,28 @@
           <div style="overflow-x: auto" id="table-container">
             <table class="table table-bordered">
               <thead>
-                <tr>
+                <tr id="dias">
                   <th class="text-center">HORA</th>
-                  {% for dia in dias%}
-                  <th class="text-center">{{dia}}</th>
-                  {% endfor %}
+
+
+
+
+
                 </tr>
               </thead>
-              <tbody>
+
+              <tbody id="horas">
+
+
+                
+                <!-- 
                 {% for hora in horas%}
+
                 <tr>
                   {% set hora_loop = loop %}
                   <td class="text-center">{{hora}}</td>
+                  
+                  
                   {% for dia in dias%} {% set dia_loop = loop %}
   
                   <td
@@ -161,8 +173,12 @@
                     style="white-space: pre-wrap; word-wrap: break-word"
                   ></td>
                   {% endfor %}
+                
+                
+                
                 </tr>
-                {% endfor %}
+                {% endfor %} -->
+
               </tbody>
             </table>
           </div>
@@ -171,8 +187,8 @@
   
   
   
-  
-      
+      <script src="/scripts/prueba.js"></script>
+      <script src="/scripts/menu.js"></script>
       <script>
         console.log("Hello there");
   
@@ -256,7 +272,7 @@
               data.forEach((curso) => {
                 const codigoCurso = curso.codigo_curso;
                 const nombreCurso = curso.nombre_curso;
-                const opcion = document.createElement("option");
+                let opcion = document.createElement("option");
                 opcion.value = codigoCurso;
                 opcion.innerText = nombreCurso;
                 cursosSelect.append(opcion);
@@ -410,7 +426,7 @@
 
   <footer>
       <i class="fa-brands fa-github"></i>
-      <a href="https://github.com/sebauvv/Mapa" style="text-decoration: none; color: #fff;">GitHub</a>
+      <a href="https://github.com/DvKirbo/Fisi-HR" style="text-decoration: none; color: #fff;">GitHub</a>
   </footer>
 
 </body>

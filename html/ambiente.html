@@ -90,7 +90,7 @@
       </figure>
       <div class="contenido-card">
           <h3>Auditorio de la Fisi</h3>
-<a href="javascript:void(0);" onclick="mostrarFormulario('direccion_lugar_1@gmail.com', 'Auditorio de la Fisi')">Solicitar</a>
+<a href="javascript:void(0);" onclick="mostrarFormulario('Auditorio de la Fisi')">Solicitar</a>
       </div>
   </div>
   <div class="card">
@@ -99,7 +99,7 @@
       </figure>
       <div class="contenido-card">
           <h3>Cancha de futbol</h3>
-<a href="javascript:void(0);" onclick="mostrarFormulario('sebastianayala201@gmail.com', 'Cancha de futbol')">Solicitar</a>
+<a href="javascript:void(0);" onclick="mostrarFormulario('Cancha de futbol')">Solicitar</a>
       </div>
   </div>
   <div class="card">
@@ -108,13 +108,12 @@
       </figure>
       <div class="contenido-card">
           <h3>Aula magna</h3>
-<a href="javascript:void(0);" onclick="mostrarFormulario('direccion_lugar_1@gmail.com', 'Aula Magna')">Solicitar</a>
+<a href="javascript:void(0);" onclick="mostrarFormulario('Aula Magna')">Solicitar</a>
       </div>
   </div>
 </div>
 
 <div class="container-contact">
-  <!-- pagina formulario aca -->
   <form action="https://formsubmit.co/matfaster22@gmail.com" method="POST">
   <h1>Contacto</h1>
       <label for="nombre">Nombre:</label>
@@ -125,56 +124,62 @@
       <input type="text" id="telefono" name="telefono" placeholder="Teléfono" required><br>
       <label for="email">Correo Electrónico:</label>
       <input type="email" id="email" name="email" placeholder="Correo Electrónico" required><br>
+      <label for="fecha">Fecha de reserva:</label>
+<input type="date" id="fecha" name="fecha" required><br>
+
+<label for="hora_entrada">Hora de entrada:</label>
+<select id="hora_entrada" name="hora_entrada" required>
+  <option value="08:00">8:00 AM</option>
+  <option value="09:00">9:00 AM</option>
+  <option value="10:00">10:00 AM</option>
+  <option value="11:00">11:00 AM</option>
+  <option value="12:00">12:00 PM</option>
+  <option value="13:00">1:00 PM</option>
+  <option value="14:00">2:00 PM</option>
+  <option value="15:00">3:00 PM</option>
+  <option value="16:00">4:00 PM</option>
+  <option value="17:00">5:00 PM</option>
+  <option value="18:00">6:00 PM</option>
+  <option value="19:00">7:00 PM</option>
+  <option value="20:00">8:00 PM</option>
+  <option value="21:00">9:00 PM</option>
+  </select><br>
+  <label for="hora_salida">Hora de salida:</label>
+  <select id="hora_salida" name="hora_salida" required>
+    <option value="09:00">9:00 AM</option>
+    <option value="10:00">10:00 AM</option>
+    <option value="11:00">11:00 AM</option>
+    <option value="12:00">12:00 PM</option>
+    <option value="13:00">1:00 PM</option>
+    <option value="14:00">2:00 PM</option>
+    <option value="15:00">3:00 PM</option>
+    <option value="16:00">4:00 PM</option>
+    <option value="17:00">5:00 PM</option>
+    <option value="18:00">6:00 PM</option>
+    <option value="19:00">7:00 PM</option>
+    <option value="20:00">8:00 PM</option>
+    <option value="21:00">9:00 PM</option>
+    <option value="22:00">10:00 PM</option>
+      </select><br>
       <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje aquí" readonly required></textarea><br>
       <input type="submit" value="Enviar">
-      <button id="generate" type="button">Generar Mensaje</button>
-      <input type="hidden" name="_next" value="http://127.0.0.1:5501/html/3erpiso.html">
-      <input type="hidden" name="_captcha" value="false">
+      <button id="generate" type="button" >Generar Mensaje</button>
   </form>
-  
-  <p id="mensajeResultado"></p>
-  <script>
-      document.addEventListener("DOMContentLoaded", function() {
-          document.getElementById("mensaje").value = "Esperando al ingreso de datos.";
-      });
-
-      document.getElementById("generate").addEventListener("click", function() {
-          const nombre = document.getElementById("nombre").value;
-          const codigo = document.getElementById("codigo").value;
-          const email = document.getElementById("email").value;
-          const mensaje = document.getElementById("mensaje").value;
-  
-          const mensajePersonalizado = `Mediante este correo el presente alumno: ${nombre} con código: ${codigo}, solicita el uso de la cancha`;
-          document.getElementById("mensaje").value = mensajePersonalizado;
-      });
-  </script> 
 </div>
-
-
-
-
-      
-
-
   <footer>
     <i class="fa-brands fa-github"></i>
     <a href="https://github.com/DvKirbo/Fisi-HR" style="text-decoration: none; color: #fff;">GitHub</a>
   </footer>
-
 </div>
 
 <script>
-  // Define la función mostrarFormulario
-  function mostrarFormulario(direccionCorreo, lugar) {
-      // Actualiza la dirección de correo del formulario
+  function mostrarFormulario(lugar) {
       var formulario = document.querySelector('form');
-      formulario.action = 'https://formsubmit.co/' + direccionCorreo;
+      formulario.action = 'https://formsubmit.co/matfaster22@gmail.com';
 
-      // Actualiza el mensaje personalizado
       var mensajePersonalizado = `Mediante este correo, solicito el uso de ${lugar}.`;
       document.getElementById("mensaje").value = mensajePersonalizado;
 
-      // Muestra el formulario
       formulario.style.display = 'block';
   }
 
@@ -186,10 +191,29 @@
       const nombre = document.getElementById("nombre").value;
       const codigo = document.getElementById("codigo").value;
       const email = document.getElementById("email").value;
+      const fecha = document.getElementById("fecha").value;
+      const hora_entrada = document.getElementById("hora_entrada").value;
+      const hora_salida = document.getElementById("hora_salida").value;
       const mensaje = document.getElementById("mensaje").value;
 
-      const mensajePersonalizado = `Mediante este correo el presente alumno: ${nombre} con código: ${codigo}, solicita el uso de la cancha`;
-      document.getElementById("mensaje").value = mensajePersonalizado;
+
+      const fechaReserva = new Date(fecha);
+    const fechaActual = new Date();
+    if (fechaReserva <= fechaActual) {
+      alert("La fecha de reserva no puede ser anterior a la fecha actual.");
+      return;
+    }
+
+    // Verificar si la hora de salida es anterior a la hora de entrada
+    if (hora_salida <= hora_entrada) {
+      alert("La hora de salida debe ser posterior a la hora de entrada.");
+      return;
+    }
+
+    const mensajePersonalizado = `Mediante este correo el presente alumno: ${nombre} con código: ${codigo}, solicita el uso de la cancha. Fecha de reserva: ${fecha}, Hora de entrada: ${hora_entrada}, Hora de salida: ${hora_salida}`;
+    document.getElementById("mensaje").value = mensajePersonalizado;
+
+
   });
 </script>
 

@@ -103,9 +103,14 @@
             </select>
         </div>
 
-          <button type="submit" class="btn btn-primary" id="generate">Generar Mensaje</button>
+        <input type="hidden" id="horario" name="horario">
+        <input type="submit" value="Reservar">
+        <script type="text/javascript" src="Horarios.js"></script>
+        <script type="text/javascript" src="main.js"></script>
+
+      <button type="submit" class="btn btn-primary" id="generate">Generar Mensaje</button>
       </form>
-      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.2/FileSaver.min.js"></script>
       <!-- Termina el formulario de envío -->
       <p id="mensajeResultado"></p>
   </div>
@@ -126,7 +131,7 @@
               document.getElementById("mensaje").value = mensajePersonalizado;
           });
       </script>
-
+        <script type="module" src="main.js"></script>
     </div>
   </div>
   

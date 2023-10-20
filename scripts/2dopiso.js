@@ -1,88 +1,51 @@
 var map = L.map('mapa', {
-    crs: L.CRS.Simple,
-    minZoom: -1,
-    maxZoom:2
+  crs: L.CRS.Simple,
+  minZoom: -1,
+  maxZoom:2
 });
 var bounds = [[0,0], [1000,1000]];
 var image = L.imageOverlay('../img/Piso2.png', bounds).addTo(map);
 map.fitBounds(bounds);
 
-/*
-var marker = L.marker([500,500],{
-  draggable: true,
-  title:"text",
-  autoPanOnFocus:true,
-  riseOnHover:true
-
-}).addTo(map).bindPopup("<h1>Hola</h1><p>Fisi</p><img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCPPDdpG4dYyLigQiEx-jFrz2TkErFi4YBHDzbek9Xcw&s' height=50px >")
-marker.on('click', function () {
-  // Define el nivel de zoom que deseas aplicar al hacer clic en el marcador
-  var zoomLevel =1 ;
-  // Obtiene la posición del marcador
-  var latLng = marker.getLatLng();
-  // Hace zoom en el marcador
-  map.setView(latLng, zoomLevel);
-});
-*/
-
-/*
-var entrada = L.marker([30,130],{
-  text:"Entrada 1"
-}).addTo(map)
-
-*/
-///////////////////////////////////////////////////////////
-//añadiendo poligono//y ,x
-var comedor = L.polygon([
-  [594,127],
-  [594, 292],
-  [514, 292],
-  [514,127]
-]).addTo(map);
-comedor.on('mouseover', function (e) {
-  this.setStyle({ fillColor: 'red' });
-});
-comedor.on('mouseout', function (e) {
-  this.setStyle({ fillColor: 'blue' });
-});
-comedor.on('click', function (e) {
-  var popupContent = "<center><h2>Comedor</h2></center><p>Lugar donde los alumnos de la facultad pueden tener un espacio agradable para ingerir sus alimentos</p>";
-  this.bindPopup(popupContent).openPopup();
-});
-comedor.on('click', function (e) {
-  var zoomLevel = 1; // Establece el nivel de zoom deseado
-  map.setView(comedor.getBounds().getCenter(), zoomLevel);
-  //  map.fitBounds(capilla.getBounds());
-});
-
-
-
-var catedraticos = L.polygon([
-    [367, 292],
-    [436, 292],
-    [436, 346],
-    [367,346]
-  ]).addTo(map);
-  catedraticos.on('mouseover', function (e) {
-    this.setStyle({ fillColor: 'red' });
+document.addEventListener("DOMContentLoaded", function() {
+  document.getElementById("mensajeResultado").textContent = "Esperando al ingreso de datos.";
+  let today = new Date().toDateString(); // Obtiene la fecha actual
+  let lastResetDate = localStorage.getItem("lastResetDate"); // Obtiene la fecha del último reinicio
+   // Compara si la fecha actual es diferente a la fecha del último reinicio
+   if (today !== lastResetDate) {
+      // Si la fecha es diferente, reinicia el contador
+      localStorage.setItem("lastResetDate", today); // Almacena la nueva fecha
+      document.getElementById("contadorReservas").textContent = "0"; // Reinicia el contador
+    }
   });
-  catedraticos.on('mouseout', function (e) {
-    this.setStyle({ fillColor: 'blue' });
-  });
-  catedraticos.on('click', function (e) {
-    var popupContent = "<center><h2>Sala de catedraticos</h2></center><p>Espacio reservado para profesores y académicos, diseñado para fomentar la colaboración, el intercambio de ideas y el desarrollo intelectual. Esta sala proporciona un ambiente propicio para la preparación de clases, la investigación y la interacción entre docentes de diferentes disciplinas.</p>";
-    this.bindPopup(popupContent).openPopup();
-  });
-  catedraticos.on('click', function (e) {
-    var zoomLevel = 1; // Establece el nivel de zoom deseado
-    map.setView(catedraticos.getBounds().getCenter(), zoomLevel);
-    //  map.fitBounds(capilla.getBounds());
-  });
-  
+  let formularioEnviado = false;
 
+  document.getElementById("generate").addEventListener("click", function(event) {
+    event.preventDefault(); // Evita que el formulario se envíe automáticamente
 
+    if (!formularioEnviado) {
+      formularioEnviado = true;
 
-  
+      var contador = parseInt(document.getElementById("contadorReservas").textContent);
+
+      if (contador < 30) {
+        contador++;
+        document.getElementById("contadorReservas").textContent = contador;
+        document.getElementById("mensajeResultado").textContent = "Reserva exitosa. " + contador + " personas han reservado el laboratorio.";
+      } else {
+        document.getElementById("mensajeResultado").textContent = "Lo siento, no hay cupo disponible para reservas.";
+      }
+    } else {
+      document.getElementById("mensajeResultado").textContent = "Ya has enviado el formulario.";
+    }
+  });
+
+  // Obtiene el valor del menú desplegable del horario de reserva
+  const horario = document.getElementById("horario").value;
+
+  // Incluye el valor del horario en el mensaje personalizado
+  const mensajePersonalizado = `Mediante este correo el presente alumno: ${nombre} con código: ${codigo}, solicita el uso del laboratorio para el horario: ${horario}`;
+    
 var decanato = L.polygon([
     [114, 127],
     [170, 127],
@@ -105,9 +68,6 @@ var decanato = L.polygon([
     //  map.fitBounds(capilla.getBounds());
   });
   
-
-
-
   var tercio = L.polygon([
     [314, 695],
     [406, 695],
